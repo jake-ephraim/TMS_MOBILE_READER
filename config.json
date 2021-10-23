@@ -2,6 +2,6 @@
     "ENCRYPTION_KEY": 133,
     "PRINT": "TMSCOMPANY",
     "EXTENSION": ".tms",
-    "DIRECTORY": "",
-    "TEMP_FILE": ""
+    "DIRECTORY": "TMS",
+    "TEMP_FOLDER": "TMS/temp/"
 }
