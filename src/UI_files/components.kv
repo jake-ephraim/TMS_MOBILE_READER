@@ -1,0 +1,53 @@
+
+<BigTitle@MDRelativeLayout>:
+    size_hint: 1, 0.18250539957
+    pos_hint: {"top": 1}
+    on_size: app.update_fonts(root.parent.width, root.parent.height)
+    canvas.before:
+        Color:
+            rgba: color1
+        Rectangle:
+            size: self.size
+    MDBoxLayout:
+        orientation:'vertical'
+        size_hint: 1, max(0.6, self.width*0.0007)
+        pos_hint: {"center_y": 0.5}
+        MDLabel:
+            markup: True
+            text:"[b]TMS[/b]"
+            halign: 'center'
+            color: color4
+            bold: True
+            font_name: bold_font
+            font_size: app.font_size_1
+        MDLabel:
+            text: "MOBILE READER"
+            color: color4
+            halign: 'center'
+            font_name: regular_font
+            font_size: app.font_size_1
+
+
+<TextBox@MDTextField>:
+    color_mode: 'custom'
+    hint_text: 'Email'
+    mode: 'rectangle'
+    line_color_focus: color1
+    # size_hint: None, None
+    font_name: regular_font
+
+
+<FlatButton@MDRaisedButton>:
+    theme_text_color: "Custom"
+    font_name: bold_font
+    text_color: color4
+    md_bg_color: color1
+
+<RectangleButton@MDRectangleFlatButton>:
+    text: "SING UP"
+    theme_text_color: "Custom"
+    text_color: color1
+    line_color: color1
+    font_name: bold_font
+
+
