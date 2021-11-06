@@ -1,10 +1,12 @@
 import json
 from pathlib import Path
 
+
 config_dir = './config.json'
-example_dir = './data/test_doc.tms'
 max_byte = 4 * 1024
 file_id = 1000
+
+example_dir = './data/test_file.tms'
 
 def decryptFile(file_name: str) -> bool:
     '''
