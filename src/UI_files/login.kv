@@ -29,9 +29,14 @@
                     width: min(dp(295), root.width*0.69)
             BoxLayout:
                 orientation:'vertical'
-                Image:
-                    source: "TMS_MOBILE_READER/data/Divider.png"
-                    allow_stretch: False   
+                BoxLayout:
+                    orientation: 'vertical'
+                    size_hint: None, None
+                    pos_hint: {"center_x": 0.5, "center_y": 0.5}
+                    size: (dp(24), dp(4))
+                    Image:
+                        source: "TMS_MOBILE_READER/data/Divider.png"  
+                    
             BoxLayout:
                 orientation:'vertical'
                 BoxLayout:

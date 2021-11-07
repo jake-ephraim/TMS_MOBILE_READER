@@ -19,7 +19,6 @@ class RecentWindow(MDScreen):
 class SignupWindow(MDScreen):
     pass
 
-
 class LoginWindow(MDScreen):
     pass
         
@@ -54,8 +53,8 @@ class TMSApp(MDApp):
         Builder.load_file(uiSettings_file)
         Builder.load_file(loginWindow_file)
         Builder.load_file(signupWindow_file)
-        #Builder.load_file(template_file)
-        #Builder.load_file(recent_file)
+        Builder.load_file(template_file)
+        Builder.load_file(recent_file)
         Builder.load_file(components_file)
         rootWindow = Builder.load_file(mainKivy_file)
         return rootWindow
@@ -69,6 +68,8 @@ class TMSApp(MDApp):
         self.font_size_2 = sp(min_font_size + (min( min(height, width), max_screen_size) * 14.018691/max_screen_size))
         self.font_size_3 = sp(min_font_size + (min( min(height, width), max_screen_size) * 4.672897/max_screen_size))
 
+    def a(self, aka):
+        pass
 
 if __name__ == "__main__":
     TMSApp().run()

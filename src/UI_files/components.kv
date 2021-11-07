@@ -10,22 +10,13 @@
             size: self.size
     MDBoxLayout:
         orientation:'vertical'
-        size_hint: 1, max(0.6, self.width*0.0007)
-        pos_hint: {"center_y": 0.5}
-        MDLabel:
-            markup: True
-            text:"[b]TMS[/b]"
-            halign: 'center'
-            color: color4
-            bold: True
-            font_name: bold_font
-            font_size: app.font_size_1
-        MDLabel:
-            text: "MOBILE READER"
-            color: color4
-            halign: 'center'
-            font_name: regular_font
-            font_size: app.font_size_1
+        MDBoxLayout:
+            orientation: 'vertical'
+            MDLabel:
+                markup: True
+                text: "[size={}][font={}]TMS[/font]\n [font={}]MOBILE READER[/font][/size]".format(int(app.font_size_1), bold_font, regular_font)
+                halign: "center"
+                color: color4
 
 
 <TextBox@MDTextField>:
@@ -51,3 +42,19 @@
     font_name: bold_font
 
 
+<TopTitleBar@RelativeLayout>:
+    MDToolbar:
+        title: "TMS"
+        font_name: bold_font
+        pos_hint: {'top': 1}
+        md_bg_color: color1
+        right_action_items: [["menu"]]
+        left_action_items: [["account-circle"]]
+        elevation: 8
+
+
+<BottomBar@RelativeLayout>:
+
+            
+
+        

@@ -1,2 +1,5 @@
 config.json
-data/
+TMS/
+src/__pycache__/
+template.kv
+recent.kv
