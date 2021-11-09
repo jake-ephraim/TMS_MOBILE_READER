@@ -48,13 +48,60 @@
         font_name: bold_font
         pos_hint: {'top': 1}
         md_bg_color: color1
-        right_action_items: [["menu"]]
+        right_action_items: [["menu", app.titlebar_menu]]
         left_action_items: [["account-circle"]]
         elevation: 8
 
 
-<BottomBar@RelativeLayout>:
+<BottomBar>:
+    # was difficult to control so a python class was created to  modify the existing code.
+    # check python file for class definition.
+    size_hint: 1, 1
+    MDBottomNavigation:
+        panel_color: color3
+        MDBottomNavigationItem:
+            name: "recent_screen"
+            text: "Recent"
+            icon: "timelapse"
 
+            MDLabel:
+                text: "Recent"
+                halign: "center"
+
+
+        MDBottomNavigationItem:
+            name: "library_screen"
+            text: "Library"
+            icon: "library"
+
+            MDLabel:
+                text: "Library"
+                halign: "center"
+        
+
+        MDBottomNavigationItem:
+            name: "cloud_screen"
+            text: "Cloud"
+            icon: "cloud"
+
+            MDLabel:
+                text: "Cloud"
+                halign: "center"
+
+
+        MDBottomNavigationItem:
+            name: "fav_screen"
+            text: "Favourites"
+            icon: "star"
+
+            MDLabel:
+                text: "Favourites"
+                halign: "center"
+    
+<FloatingButton@MDFloatingActionButton>:
+    icon: "magnify"
+    md_bg_color: color1
+    pos_hint: {"center_y": 0.15, "center_x": 0.88}
             
 
         
