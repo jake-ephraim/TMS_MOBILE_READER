@@ -11,7 +11,5 @@ components_file = root_dir + 'UI_files/components.kv'
 
 uiSettings_file = root_dir + "UI_files/ui_settings.kv"
 
-template_file = root_dir + "UI_files/template.kv"
-
 recent_file = root_dir + "UI_files/recent.kv"
 

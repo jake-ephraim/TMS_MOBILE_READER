@@ -1,6 +1,6 @@
 
 <LoginWindow>:
-    name: "login"
+    name: 'login'
     canvas.before:
         Color:
             rgba: color3
@@ -8,7 +8,9 @@
             size: self.size
     BoxLayout:
         orientation:'vertical'
+
         BigTitle:
+
         BoxLayout:
             orientation:'vertical'
             BoxLayout:
@@ -29,9 +31,13 @@
                     width: min(dp(295), root.width*0.69)
             BoxLayout:
                 orientation:'vertical'
-                Image:
-                    source: "TMS_MOBILE_READER/data/Divider.png"
-                    allow_stretch: False   
+                AnchorLayout:                   
+                    Image:
+                        source: "TMS_MOBILE_READER/data/Divider.png"
+                        allow_stretch: True  
+                        size_hint: None, None
+                        size: (dp(24), dp(4))
+                    
             BoxLayout:
                 orientation:'vertical'
                 BoxLayout:
@@ -44,9 +50,13 @@
                     FlatButton:
                         text: "LOG IN"
                         size_hint: 1, None
+                        on_press:
+                            root.manager.current = 'recent'
                     RectangleButton: 
                         size_hint: 1, None
                         on_press:
                             root.manager.current = 'signup'
+                        on_release:
+                            app.root.focus_signup()
 
         
