@@ -1,4 +1,6 @@
 
+__version__ = "1.0.0"
+
 from kivymd.app import MDApp
 from kivymd.uix.screen import MDScreen
 from kivymd.uix.menu import MDDropdownMenu
@@ -11,12 +13,11 @@ from kivy.properties import ObjectProperty
 from kivy.clock import Clock
 from directories import *
 #REMOVE IN PRODUCTION
-#from kivy.core.window import Window
+# from kivy.core.window import Window
 from kivy.metrics import dp, sp
-#Window.size = (dp(428/1.5), dp(926/1.5))
-from decrypt import decryptFile
-decryptFile("")
-
+# Window.size = (dp(428/1.5), dp(926/1.5))
+# from decrypt import decryptFile
+# decryptFile("")
 ##############################
 
 class MenuListItem(OneLineListItem):
