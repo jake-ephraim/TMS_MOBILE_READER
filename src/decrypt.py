@@ -2,7 +2,7 @@ import json
 from pathlib import Path
 
 
-config_dir = './config.json'
+config_dir = "./config.json"
 max_byte = 4 * 1024
 file_id = 1000
 
@@ -25,6 +25,8 @@ def decryptFile(file_name: str) -> bool:
     temp_folder = extract_config(config_dir, 'TEMP_FOLDER')
     
     ## read all data in the file
+    if file_name == "":
+    	return False
     with open(file_name, 'rb') as f:
         file = f.read()
         
