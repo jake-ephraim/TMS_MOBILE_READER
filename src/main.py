@@ -1,5 +1,5 @@
 
-__version__ = "1.0.0"
+__version__ = "0.0.0"
 
 from kivymd.app import MDApp
 from kivymd.uix.screen import MDScreen
@@ -141,10 +141,16 @@ class TMSApp(MDApp):
         self.font_size_3 = sp(min_font_size + (min( min(height, width), max_screen_size) * 4.672897/max_screen_size))
 
     def titlebar_menu(self, inst):
+        '''
+        called to open menu.
+        '''
         self.menu.caller = inst
         self.menu.open()
 
     def menu_return(self, val):
+        '''
+        called to close menu and return to the signup page.
+        '''
         self.menu.dismiss()
         # switch the window to the signup window
         self.root.current = 'signup'
