@@ -1,7 +1,7 @@
 
 <BigTitle@MDRelativeLayout>:
-    size_hint: 1, 0.18250539957
-    pos_hint: {"top": 1}
+    size_hint: 1., 0.18250539957
+    pos_hint: {"top": 1.}
     on_size: app.update_fonts(root.parent.width, root.parent.height)
     canvas.before:
         Color:
@@ -43,14 +43,17 @@
 
 
 <TopTitleBar@RelativeLayout>:
+    size_hint: 1., None
+    height: self.height
+    pos_hint: {"top": 1.0}
     MDToolbar:
         title: "TMS"
         font_name: bold_font
-        pos_hint: {'top': 1}
+        pos_hint: {'top': 1.}
         md_bg_color: color1
         right_action_items: [["menu", app.titlebar_menu]]
         left_action_items: [["account-circle"]]
-        elevation: 8
+        elevation: 8.
 
 
 <BottomBar>:
@@ -63,10 +66,25 @@
             name: "recent_screen"
             text: "Recent"
             icon: "timelapse"
-
-            MDLabel:
-                text: "Recent"
-                halign: "center"
+            MDBoxLayout:
+                canvas.before:
+                    Color:
+                        rgba: color3
+                    Rectangle:
+                        size: self.size
+                        pos: self.pos
+                size_hint_x: .96
+                pos_hint: {"center_x": 0.5}
+                padding: dp(0), dp(scroll_padding), dp(0), dp(0)
+                ScrollView:
+                    canvas.before:
+                        Color:
+                            rgba: color4
+                        Rectangle:
+                            size: self.size
+                            pos: self.pos
+                    MDList:
+                        id: recent_list
 
 
         MDBottomNavigationItem:
@@ -74,9 +92,25 @@
             text: "Library"
             icon: "library"
 
-            MDLabel:
-                text: "Library"
-                halign: "center"
+            MDBoxLayout:
+                canvas.before:
+                    Color:
+                        rgba: color3
+                    Rectangle:
+                        size: self.size
+                        pos: self.pos
+                size_hint_x: .96
+                pos_hint: {"center_x": 0.5}
+                padding: dp(0), dp(scroll_padding), dp(0), dp(0)
+                ScrollView:
+                    canvas.before:
+                        Color:
+                            rgba: color4
+                        Rectangle:
+                            size: self.size
+                            pos: self.pos
+                    MDList:
+                        id: library_list
         
 
         MDBottomNavigationItem:
@@ -84,9 +118,25 @@
             text: "Cloud"
             icon: "cloud"
 
-            MDLabel:
-                text: "Cloud"
-                halign: "center"
+            MDBoxLayout:
+                canvas.before:
+                    Color:
+                        rgba: color3
+                    Rectangle:
+                        size: self.size
+                        pos: self.pos
+                size_hint_x: .96
+                pos_hint: {"center_x": 0.5}
+                padding: dp(0), dp(scroll_padding), dp(0), dp(0)
+                ScrollView:
+                    canvas.before:
+                        Color:
+                            rgba: color4
+                        Rectangle:
+                            size: self.size
+                            pos: self.pos
+                    MDList:
+                        id: cloud_list
 
 
         MDBottomNavigationItem:
@@ -94,14 +144,47 @@
             text: "Starred"
             icon: "star"
 
-            MDLabel:
-                text: "Favourites"
-                halign: "center"
+            MDBoxLayout:
+                canvas.before:
+                    Color:
+                        rgba: color3
+                    Rectangle:
+                        size: self.size
+                        pos: self.pos
+                size_hint_x: .96
+                pos_hint: {"center_x": 0.5}
+                padding: dp(0), dp(scroll_padding), dp(0), dp(0)
+                ScrollView:
+                    canvas.before:
+                        Color:
+                            rgba: color4
+                        Rectangle:
+                            size: self.size
+                            pos: self.pos
+                    MDList:
+                        id: starred_list
     
 <FloatingButton@MDFloatingActionButton>:
     icon: "magnify"
     md_bg_color: color1
     pos_hint: {"center_y": 0.15, "center_x": 0.88}
-            
+
+
+<OneItemList>:
+    text: "Will be edited in the python file"
+    IconLeftWidget:
+        icon: img_dir + tms_file_icon
+    StarListItem:
+
+<TwoItemList>:
+    text: "Will be edited in the python file"
+    secondary_text: "Will be edited in the python file"
+    IconLeftWidget:
+        icon: img_dir + tms_file_icon
+    StarListItem:
+
+<StarListItem>:
+    MDIconButton:
+        icon: "star"
 
         
