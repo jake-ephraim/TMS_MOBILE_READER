@@ -2,5 +2,129 @@
 <TabsWindow>:
     name: 'tabs'
     BottomBar:
-    TopTitleBar:
-    FloatingButton:
+        # was difficult to control so a python class was created to  modify the existing code.
+        # check python file for class definition.
+        #size_hint: 1, 1
+        MDBottomNavigation:
+            #panel_color: color3
+            MDBottomNavigationItem:
+                name: "recent_screen"
+                text: "Recent"
+                icon: "timelapse"
+                BoxLayout:
+                    canvas.before:
+                        Color:
+                            rgba: color3
+                        Rectangle:
+                            size: self.size
+                            pos: self.pos
+                    size_hint_x: .96
+                    pos_hint: {"center_x": 0.5}
+                    padding: dp(0), dp(scroll_padding), dp(0), dp(0)
+                    ScrollView:
+                        canvas.before:
+                            Color:
+                                rgba: color4
+                            Rectangle:
+                                size: self.size
+                                pos: self.pos
+                        MDList:
+                            id: recent_list
+
+
+            MDBottomNavigationItem:
+                name: "library_screen"
+                text: "Library"
+                icon: "library"
+
+                BoxLayout:
+                    canvas.before:
+                        Color:
+                            rgba: color3
+                        Rectangle:
+                            size: self.size
+                            pos: self.pos
+                    size_hint_x: .96
+                    pos_hint: {"center_x": 0.5}
+                    padding: dp(0), dp(scroll_padding), dp(0), dp(0)
+                    ScrollView:
+                        canvas.before:
+                            Color:
+                                rgba: color4
+                            Rectangle:
+                                size: self.size
+                                pos: self.pos
+                        MDList:
+                            id: library_list
+            
+
+            MDBottomNavigationItem:
+                name: "cloud_screen"
+                text: "Cloud"
+                icon: "cloud"
+
+                BoxLayout:
+                    canvas.before:
+                        Color:
+                            rgba: color3
+                        Rectangle:
+                            size: self.size
+                            pos: self.pos
+                    size_hint_x: .96
+                    pos_hint: {"center_x": 0.5}
+                    padding: dp(0), dp(scroll_padding), dp(0), dp(0)
+                    ScrollView:
+                        canvas.before:
+                            Color:
+                                rgba: color4
+                            Rectangle:
+                                size: self.size
+                                pos: self.pos
+                        MDList:
+                            id: cloud_list
+
+
+            MDBottomNavigationItem:
+                name: "fav_screen"
+                text: "Starred"
+                icon: "star"
+
+                BoxLayout:
+                    canvas.before:
+                        Color:
+                            rgba: color3
+                        Rectangle:
+                            size: self.size
+                            pos: self.pos
+                    size_hint_x: .96
+                    pos_hint: {"center_x": 0.5}
+                    padding: dp(0), dp(scroll_padding), dp(0), dp(0)
+                    ScrollView:
+                        canvas.before:
+                            Color:
+                                rgba: color4
+                            Rectangle:
+                                size: self.size
+                                pos: self.pos
+                        MDList:
+                            id: starred_list
+    
+    
+    #TopTitleBar
+    RelativeLayout:
+        size_hint: 1., None
+        height: self.height
+        pos_hint: {"top": 1.0}
+        MDToolbar:
+            title: "TMS"
+            font_name: bold_font
+            pos_hint: {'top': 1.}
+            md_bg_color: color1
+            right_action_items: [["menu", app.open_title_menu]]
+            left_action_items: [["account-circle", app.open_profile]]
+            elevation: 8.
+    #FloatingButton
+    MDFloatingActionButton:
+        icon: "magnify"
+        md_bg_color: color1
+        pos_hint: {"center_y": 0.15, "center_x": 0.88}
